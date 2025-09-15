@@ -1,0 +1,115 @@
+.plant {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.plant:hover {
+  transform: scale(1.05);
+}
+
+.health-bar {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.health-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff4444 0%, #ffaa00 50%, #44ff44 100%);
+  transition: width 0.3s ease;
+}
+
+/* Plant type specific styles */
+.plant-peashooter {
+  background: radial-gradient(circle, #32CD32 30%, #228B22 70%);
+  border-radius: 50%;
+  border: 2px solid #006400;
+}
+
+.plant-sunflower {
+  background: radial-gradient(circle, #FFD700 30%, #FFA500 70%);
+  border-radius: 50%;
+  border: 2px solid #FF8C00;
+}
+
+.plant-wallnut {
+  background: radial-gradient(circle, #8B4513 30%, #654321 70%);
+  border-radius: 50%;
+  border: 2px solid #4B2F0F;
+}
+
+.plant-cherrybomb {
+  background: radial-gradient(circle, #FF0000 30%, #8B0000 70%);
+  border-radius: 50%;
+  border: 2px solid #4B0000;
+}
+
+.plant-snowpea {
+  background: radial-gradient(circle, #87CEEB 30%, #4682B4 70%);
+  border-radius: 50%;
+  border: 2px solid #2F4F4F;
+}
+
+/* Plant animations */
+@keyframes plantGrow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.plant {
+  animation: plantGrow 0.5s ease-out;
+}
+
+/* Sunflower animation */
+.plant-sunflower {
+  animation: sunflowerSway 3s ease-in-out infinite;
+}
+
+@keyframes sunflowerSway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Wall-nut special styling */
+.plant-wallnut {
+  background: 
+    radial-gradient(circle at 30% 30%, #D2691E 20%, transparent 20%),
+    radial-gradient(circle at 70% 70%, #D2691E 15%, transparent 15%),
+    radial-gradient(circle, #8B4513 30%, #654321 70%);
+}
+
+/* Cherry bomb pulsing */
+.plant-cherrybomb {
+  animation: cherryPulse 1s ease-in-out infinite;
+}
+
+@keyframes cherryPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

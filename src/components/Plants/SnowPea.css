@@ -1,0 +1,140 @@
+.snowpea {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snowpea-body {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.snowpea-head {
+  width: 40px;
+  height: 40px;
+  background: #87CEEB;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid #4682B4;
+}
+
+.snowpea-mouth {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 8px;
+  background: #4682B4;
+  border-radius: 0 50% 50% 0;
+  border: 1px solid #2F4F4F;
+}
+
+.snowpea-leaves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+}
+
+.leaf {
+  position: absolute;
+  background: #4682B4;
+  border-radius: 50% 0;
+  border: 1px solid #2F4F4F;
+}
+
+.leaf-1 {
+  width: 25px;
+  height: 15px;
+  top: 10px;
+  left: 15px;
+  transform: rotate(-30deg);
+}
+
+.leaf-2 {
+  width: 20px;
+  height: 12px;
+  top: 25px;
+  right: 10px;
+  transform: rotate(30deg);
+}
+
+.leaf-3 {
+  width: 18px;
+  height: 10px;
+  bottom: 15px;
+  left: 20px;
+  transform: rotate(-60deg);
+}
+
+.snow-crystals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.crystal {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  animation: snowFloat 2s ease-in-out infinite;
+}
+
+.crystal-1 {
+  top: 10px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.crystal-2 {
+  top: 30px;
+  right: 15px;
+  animation-delay: 0.7s;
+}
+
+.crystal-3 {
+  bottom: 20px;
+  left: 30px;
+  animation-delay: 1.4s;
+}
+
+@keyframes snowFloat {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.2);
+  }
+}
+
+/* Shooting animation */
+.snowpea.shooting .snowpea-head {
+  animation: snowpeaShoot 0.3s ease-out;
+}
+
+@keyframes snowpeaShoot {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

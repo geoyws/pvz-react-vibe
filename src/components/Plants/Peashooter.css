@@ -1,0 +1,93 @@
+.peashooter {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.peashooter-body {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.peashooter-head {
+  width: 40px;
+  height: 40px;
+  background: #32CD32;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid #228B22;
+}
+
+.peashooter-mouth {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 8px;
+  background: #228B22;
+  border-radius: 0 50% 50% 0;
+  border: 1px solid #006400;
+}
+
+.peashooter-leaves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+}
+
+.leaf {
+  position: absolute;
+  background: #228B22;
+  border-radius: 50% 0;
+  border: 1px solid #006400;
+}
+
+.leaf-1 {
+  width: 25px;
+  height: 15px;
+  top: 10px;
+  left: 15px;
+  transform: rotate(-30deg);
+}
+
+.leaf-2 {
+  width: 20px;
+  height: 12px;
+  top: 25px;
+  right: 10px;
+  transform: rotate(30deg);
+}
+
+.leaf-3 {
+  width: 18px;
+  height: 10px;
+  bottom: 15px;
+  left: 20px;
+  transform: rotate(-60deg);
+}
+
+/* Animation for shooting */
+.peashooter.shooting .peashooter-head {
+  animation: peashooterShoot 0.3s ease-out;
+}
+
+@keyframes peashooterShoot {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

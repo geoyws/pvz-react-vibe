@@ -1,0 +1,141 @@
+.plant-selector {
+  background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+  border: 3px solid #006400;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.selector-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.plant-card {
+  background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+  border: 2px solid #32CD32;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.plant-card.selected {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-color: #FF8C00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+}
+
+.plant-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #A0A0A0 0%, #C0C0C0 100%);
+  border-color: #808080;
+}
+
+.plant-card.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.plant-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+  animation: plantBounce 2s ease-in-out infinite;
+}
+
+.plant-card.selected .plant-icon {
+  animation: plantSelected 0.5s ease-in-out infinite;
+}
+
+@keyframes plantBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes plantSelected {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.plant-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #006400;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.plant-card.selected .plant-name {
+  color: #8B0000;
+}
+
+.plant-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF8C00;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sun-icon {
+  font-size: 12px;
+  animation: sunSpin 3s linear infinite;
+}
+
+@keyframes sunSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover effects */
+.plant-card:not(.disabled):hover .plant-icon {
+  animation: plantHover 0.3s ease-in-out;
+}
+
+@keyframes plantHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "models": {
+    "chat": "qwen3-coder:30b",
+    "autocomplete": "claude-3.5-sonnet"
+  }
+}

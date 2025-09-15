@@ -1,0 +1,92 @@
+.zombie {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.zombie.slowed {
+  filter: hue-rotate(200deg) brightness(1.2);
+  animation: zombieSlow 0.5s ease-in-out infinite;
+}
+
+@keyframes zombieSlow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+}
+
+.health-bar {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.health-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff4444 0%, #ffaa00 50%, #44ff44 100%);
+  transition: width 0.3s ease;
+}
+
+/* Zombie type specific styles */
+.zombie-basic {
+  background: radial-gradient(ellipse at center, #8B4513 30%, #654321 70%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  border: 2px solid #4B2F0F;
+}
+
+.zombie-conehead {
+  background: radial-gradient(ellipse at center, #8B4513 30%, #654321 70%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  border: 2px solid #4B2F0F;
+}
+
+.zombie-buckethead {
+  background: radial-gradient(ellipse at center, #8B4513 30%, #654321 70%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  border: 2px solid #4B2F0F;
+}
+
+/* Walking animation */
+.zombie {
+  animation: zombieWalk 1s ease-in-out infinite;
+}
+
+@keyframes zombieWalk {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+}
+
+/* Damage animation */
+.zombie.damaged {
+  animation: zombieHit 0.3s ease-out;
+}
+
+@keyframes zombieHit {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

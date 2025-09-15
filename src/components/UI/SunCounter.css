@@ -1,0 +1,74 @@
+.sun-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border: 3px solid #FF8C00;
+  border-radius: 25px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.sun-counter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: sunShine 3s ease-in-out infinite;
+}
+
+@keyframes sunShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.sun-icon {
+  font-size: 24px;
+  animation: sunRotate 4s linear infinite;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes sunRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sun-amount {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8B0000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  min-width: 60px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Pulse animation when sun changes */
+.sun-counter.updating {
+  animation: sunUpdate 0.5s ease-in-out;
+}
+
+@keyframes sunUpdate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

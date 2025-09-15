@@ -1,0 +1,78 @@
+.snowpea-projectile {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snowpea-body {
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle at 30% 30%, #B0E0E6, #87CEEB);
+  border-radius: 50%;
+  border: 1px solid #4682B4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.snow-crystals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.crystal {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  animation: snowFloat 1s ease-in-out infinite;
+}
+
+.crystal-1 {
+  top: 1px;
+  left: 1px;
+  animation-delay: 0s;
+}
+
+.crystal-2 {
+  top: 3px;
+  right: 1px;
+  animation-delay: 0.3s;
+}
+
+.crystal-3 {
+  bottom: 1px;
+  left: 3px;
+  animation-delay: 0.6s;
+}
+
+@keyframes snowFloat {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Flying animation with snow effect */
+.snowpea-projectile {
+  animation: snowpeaFly 0.5s linear infinite;
+}
+
+@keyframes snowpeaFly {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(2px) rotate(360deg);
+  }
+}
